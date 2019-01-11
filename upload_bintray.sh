@@ -24,10 +24,10 @@ ls -lh $FILE
 set
 echo uploading $FILE to bintray ...
 
-curl -s -T $FILE \
+/usr/bin/curl -s -T $FILE \
       -u $BINTRAY_OWNER:$BINTRAY_API_KEY \
       --header "X-Bintray-Override: 1" \
      https://api.bintray.com/content/$BINTRAY_OWNER/$BINTRAY_REPOS/$BINTRAY_PACKAGE/$BINTRAY_PACKAGE_VER/$FILE
 
-curl -s -u $BINTRAY_OWNER:$BINTRAY_API_KEY \
+/usr/bin/curl -s -u $BINTRAY_OWNER:$BINTRAY_API_KEY \
    -X POST https://api.bintray.com/content/$BINTRAY_OWNER/$BINTRAY_REPOS/$BINTRAY_PACKAGE/$BINTRAY_PACKAGE_VER/publish
