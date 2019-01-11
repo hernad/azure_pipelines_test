@@ -30,7 +30,7 @@ jobs:
       - script: |
           set PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem
           %CD:~0,2%\msys64\usr\bin\bash -lc "bash upload_bintray.sh"
-        displayName: upload ver harbour-windows-$(BINTRAY_ARCH)-$BUILD_BUILDNUMBER  to bintray - ne radi bez CHERE_INVOKING
+        displayName: upload ver harbour-windows-$(BINTRAY_ARCH)-$(BUILD_BUILDNUMBER)  to bintray - ne radi bez CHERE_INVOKING
         env:
           CHERE_INVOKING: yes
           BINTRAY_API_KEY: $(BINTRAY_API_KEY)
