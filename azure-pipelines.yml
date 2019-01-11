@@ -35,10 +35,10 @@ jobs:
           CHERE_INVOKING: yes
           BINTRAY_API_KEY: $(BINTRAY_API_KEY)
 
-      #- task: PublishBuildArtifacts@1
-      #  displayName: Publish packages
-      #  continueOnError: true
-      #  condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
-      #  inputs:
-      #    pathtoPublish: $(Build.SourcesDirectory)/artifacts
-      #    artifactName: harbour-$(MINGW_ARCH)
+      - task: PublishBuildArtifacts@1
+        displayName: Publish packages
+        continueOnError: true
+        condition: and(succeeded(), eq(variables['system.pullrequest.isfork'], false))
+        inputs:
+          pathtoPublish: $(Build.SourcesDirectory)/artifacts
+          artifactName: test-$(MINGW_ARCH)
