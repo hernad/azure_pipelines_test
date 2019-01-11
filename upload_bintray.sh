@@ -2,9 +2,9 @@
 
 # https://github.com/$BINTRAY_OWNER/greenbox/blob/apps_modular/upload_app.sh
 
+cd "$(dirname "$0")"
 
 BINTRAY_API_KEY=${BINTRAY_API_KEY:-`cat bintray_api_key`}
-
 BINTRAY_OWNER=hernad
 BINTRAY_REPOS=harbour
 BINTRAY_PACKAGE=$1
